@@ -35,12 +35,6 @@ const services = [
   },
 ];
 
-const useCases = [
-  'Negocios que hoy trabajan con planillas y necesitan ordenar la información.',
-  'Equipos que repiten tareas manuales todos los días.',
-  'Emprendimientos que quieren validar una idea sin sobredimensionarla.',
-];
-
 function App() {
   return (
     <div className="site-shell">
@@ -148,25 +142,6 @@ function App() {
                 <li>Desarrollar una primera versión funcional.</li>
                 <li>Ajustar con uso real.</li>
               </ol>
-            </div>
-          </div>
-        </section>
-
-        <section className="section use-cases">
-          <div className="container">
-            <div className="section-title">
-              <p className="eyebrow">Casos de uso</p>
-              <h2>Ideas que pueden convertirse en herramientas reales.</h2>
-              <p>Esta sección queda preparada para sumar proyectos y ejemplos concretos a medida que el portfolio crezca.</p>
-            </div>
-
-            <div className="use-grid">
-              {useCases.map((item, index) => (
-                <article className="use-card" key={item}>
-                  <span>{String(index + 1).padStart(2, '0')}</span>
-                  <p>{item}</p>
-                </article>
-              ))}
             </div>
           </div>
         </section>
