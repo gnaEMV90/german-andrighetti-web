@@ -1,6 +1,10 @@
 # German Andrighetti Web
 
-Sitio institucional para servicios de desarrollo de software a medida.
+Sitio institucional para presentar los servicios de **German Andrighetti - Desarrollos a medida**.
+
+## Objetivo
+
+Publicar una primera presencia online profesional, simple, responsive y gratuita, orientada a clientes que necesitan resolver problemas concretos mediante software, automatizaciones o herramientas internas.
 
 ## Stack
 
@@ -10,21 +14,35 @@ Sitio institucional para servicios de desarrollo de software a medida.
 - CSS puro
 - Cloudflare Pages
 
-## Uso local
+## Ejecutar localmente
 
 ```bash
 npm install
 npm run dev
 ```
 
-## Build
+## Build de producción
 
 ```bash
 npm run build
 ```
 
-## Cloudflare Pages
+El resultado queda en la carpeta `dist`.
 
+## Deploy en Cloudflare Pages
+
+Configuración recomendada:
+
+- Framework preset: `Vite`
 - Production branch: `main`
 - Build command: `npm run build`
 - Build output directory: `dist`
+
+## Contacto publicado
+
+- WhatsApp: 3532-678034
+- Email: german.andrighetti@gmail.com
+
+## Estado
+
+Primera versión funcional de landing institucional.
