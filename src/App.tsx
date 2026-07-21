@@ -1,3 +1,5 @@
+import { useEffect, useState } from 'react';
+
 const whatsappUrl = 'https://wa.me/5493532678034?text=Hola%20German%2C%20quiero%20consultarte%20por%20un%20desarrollo%20a%20medida.';
 const emailUrl = 'mailto:german.andrighetti@gmail.com';
 const phoneUrl = 'tel:+5493532678034';
@@ -323,6 +325,39 @@ function Footer() {
   );
 }
 
+function ScrollTopButton() {
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsVisible(window.scrollY > 420);
+    };
+
+    handleScroll();
+    window.addEventListener('scroll', handleScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  return (
+    <button
+      className={`scroll-top${isVisible ? ' is-visible' : ''}`}
+      type="button"
+      onClick={scrollToTop}
+      aria-label="Volver arriba"
+      title="Volver arriba"
+    >
+      ↑
+    </button>
+  );
+}
+
 function App() {
   const isSolutionsPage = window.location.pathname.startsWith('/soluciones');
 
@@ -331,6 +366,7 @@ function App() {
       <Header />
       {isSolutionsPage ? <SolutionsPage /> : <HomePage />}
       <Footer />
+      <ScrollTopButton />
     </div>
   );
 }
