@@ -35,6 +35,27 @@ const services = [
   },
 ];
 
+const solutions = [
+  {
+    tag: 'Próximamente',
+    title: 'Sistema de despensa',
+    text: 'Gestión simple para ventas, caja, productos y operación diaria. La idea es que cada negocio active solo los módulos que realmente necesita.',
+    modules: ['Ventas', 'Caja', 'Productos', 'Stock'],
+  },
+  {
+    tag: 'Próximamente',
+    title: 'Panel de pedidos',
+    text: 'Una herramienta para recibir, ordenar y consultar pedidos sin depender de mensajes sueltos, papeles o planillas imposibles de seguir.',
+    modules: ['Pedidos', 'Estados', 'Clientes'],
+  },
+  {
+    tag: 'Próximamente',
+    title: 'Control de tareas internas',
+    text: 'Organización de tareas, responsables y vencimientos para equipos chicos que necesitan claridad sin meterse en sistemas enormes.',
+    modules: ['Tareas', 'Responsables', 'Seguimiento'],
+  },
+];
+
 function App() {
   return (
     <div className="site-shell">
@@ -49,6 +70,7 @@ function App() {
 
         <nav className="main-nav" aria-label="Navegación principal">
           <a href="#servicios">Servicios</a>
+          <a href="#soluciones">Soluciones</a>
           <a href="#sobre-mi">Sobre mí</a>
           <a href="#contacto">Contacto</a>
         </nav>
@@ -113,6 +135,33 @@ function App() {
                   <span>{service.tag}</span>
                   <h3>{service.title}</h3>
                   <p>{service.text}</p>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="section" id="soluciones">
+          <div className="container">
+            <div className="section-title">
+              <p className="eyebrow">Soluciones listas para usar</p>
+              <h2>Un catálogo de herramientas para activar según lo que necesite cada negocio.</h2>
+              <p>
+                Estoy preparando soluciones online que podrán contratarse mediante una suscripción mensual compuesta por una base fija y los sistemas o módulos que cada cliente decida activar. Simple: pagar por lo que se usa, sin comprar un elefante para llevar una bolsa.
+              </p>
+            </div>
+
+            <div className="services-grid">
+              {solutions.map((solution) => (
+                <article className="service-card" key={solution.title}>
+                  <span>{solution.tag}</span>
+                  <h3>{solution.title}</h3>
+                  <p>{solution.text}</p>
+                  <div className="chips">
+                    {solution.modules.map((module) => (
+                      <span key={module}>{module}</span>
+                    ))}
+                  </div>
                 </article>
               ))}
             </div>
